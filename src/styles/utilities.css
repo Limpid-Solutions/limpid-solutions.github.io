@@ -1,0 +1,124 @@
+.container {
+  width: min(100% - 2.5rem, var(--container-max));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--space-7);
+}
+
+@media (min-width: 960px) {
+  .section {
+    padding-block: var(--space-10);
+  }
+}
+
+.section--surface {
+  background: var(--color-surface);
+}
+
+.section--mist {
+  background: var(--color-mist);
+}
+
+.section--ink {
+  background: var(--color-ink);
+  color: var(--color-text-invert);
+}
+
+.section--ink h1,
+.section--ink h2,
+.section--ink h3 {
+  color: #fff;
+}
+
+.section--ink p {
+  color: rgba(242, 247, 251, 0.78);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-azure);
+  margin-bottom: var(--space-2);
+}
+
+.section--ink .eyebrow {
+  color: var(--color-glacier);
+}
+
+.lede {
+  font-size: var(--fs-lg);
+  line-height: 1.7;
+  max-width: 60ch;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-med) var(--ease-out);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--color-deep);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: var(--color-ink);
+  color: #fff;
+  transform: translateY(-1px) scale(1.015);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--primary:active {
+  transform: scale(0.98);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-deep);
+  border: 1px solid var(--color-deep);
+}
+
+.btn--ghost:hover {
+  background: var(--color-mist);
+  color: var(--color-deep);
+}
+
+.btn--accent {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn--accent:hover {
+  background: #00a094;
+  color: #fff;
+  transform: translateY(-1px) scale(1.015);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--on-dark {
+  background: #fff;
+  color: var(--color-ink);
+}
+
+.btn--on-dark:hover {
+  background: var(--color-mist);
+  color: var(--color-ink);
+}
