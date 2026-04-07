@@ -3,16 +3,7 @@
     <div class="container site-footer__inner">
       <div class="site-footer__brand">
         <a href="#top" class="site-footer__logo">
-          <span aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
-              <path
-                d="M12 2C12 2 4 11 4 16a8 8 0 1 0 16 0c0-5-8-14-8-14Z"
-                stroke="currentColor"
-                stroke-width="1.6"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </span>
+          <img src="/logos/limpidsolutions.png" alt="" class="site-footer__logo-img" aria-hidden="true" />
           {{ site.shortName }}
         </a>
         <p>{{ site.tagline }}</p>
@@ -41,7 +32,6 @@
 
     <div class="container site-footer__bottom">
       <span>&copy; {{ year }} {{ site.company }}. All rights reserved.</span>
-      <span>{{ site.abn }}</span>
     </div>
   </footer>
 </template>
@@ -81,8 +71,12 @@ const year = new Date().getFullYear();
   color: #fff;
 }
 
-.site-footer__logo svg {
-  color: var(--color-azure);
+.site-footer__logo-img {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
 }
 
 .site-footer h4 {

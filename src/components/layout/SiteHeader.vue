@@ -5,16 +5,7 @@
   >
     <div class="container site-header__inner">
       <a href="#top" class="site-header__brand" @click="closeMenu">
-        <span class="site-header__mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
-            <path
-              d="M12 2C12 2 4 11 4 16a8 8 0 1 0 16 0c0-5-8-14-8-14Z"
-              stroke="currentColor"
-              stroke-width="1.6"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </span>
+        <img src="/logos/limpidsolutions.png" alt="" class="site-header__logo-img" aria-hidden="true" />
         <span class="site-header__name">{{ site.shortName }}</span>
       </a>
 
@@ -131,9 +122,10 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey));
   color: inherit;
 }
 
-.site-header__mark {
-  display: inline-flex;
-  color: var(--color-deep);
+.site-header__logo-img {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
 }
 
 .site-header__nav {

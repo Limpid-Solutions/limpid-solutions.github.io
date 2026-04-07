@@ -26,7 +26,14 @@
             height="18"
           />
           <div class="customer-card__logo">
-            <img :src="customer.logo" :alt="customer.name" loading="lazy" :style="customer.logoFilter ? { filter: customer.logoFilter } : {}" />
+            <img
+              v-if="customer.logo"
+              :src="customer.logo"
+              :alt="customer.name"
+              loading="lazy"
+              :style="customer.logoFilter ? { filter: customer.logoFilter } : {}"
+            />
+            <span v-else class="customer-card__name-fallback">{{ customer.name }}</span>
           </div>
           <span class="customer-card__industry">{{ customer.industry }}</span>
         </a>
@@ -110,6 +117,13 @@ import customers from '../../data/customers.js';
   opacity: 1;
 }
 
+
+.customer-card__name-fallback {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--color-ink);
+}
 
 .customer-card__industry {
   font-size: var(--fs-xs);
