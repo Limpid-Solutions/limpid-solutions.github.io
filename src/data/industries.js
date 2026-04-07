@@ -5,7 +5,7 @@ export default [
     icon: 'lucide:truck',
     title: 'Logistics',
     featured: true,
-    body: 'Supply chain optimisation, fleet management and real-time tracking systems. Deep expertise in Warehouse Management Systems (WMS), Warehouse Control Systems (WCS) and Warehouse Execution Systems (WES) — covering inventory management, order fulfilment, automated material handling and operational orchestration. Extensive experience in Multi-Vendor System Integration Management, harmonising diverse hardware and software ecosystems across complex warehouse and distribution environments.',
+    body: 'Deep expertise in intralogistics systems, including Warehouse Management Systems (WMS), Warehouse Control Systems (WCS) and Warehouse Execution Systems (WES) — covering inventory management, order fulfilment, automated material handling and operational orchestration. Extensive experience in Multi-Vendor System Integration Management, harmonising diverse hardware and software ecosystems across complex warehouse and distribution environments.',
   },
   {
     icon: 'lucide:landmark',
