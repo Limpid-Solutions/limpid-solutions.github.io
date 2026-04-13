@@ -4,18 +4,18 @@
     :class="{ 'site-header--scrolled': scrolled, 'site-header--menu-open': menuOpen }"
   >
     <div class="container site-header__inner">
-      <a href="#top" class="site-header__brand" @click="closeMenu">
-        <img src="/logos/limpidsolutions.png" alt="" class="site-header__logo-img" aria-hidden="true" />
+      <a href="/" class="site-header__brand" @click="handleBrandClick">
+        <img src="/logos/limpidsolutions.svg" alt="" class="site-header__logo-img" aria-hidden="true" />
         <span class="site-header__name">{{ site.shortName }}</span>
       </a>
 
       <nav class="site-header__nav" aria-label="Primary">
         <ul>
           <li v-for="link in site.navLinks" :key="link.href">
-            <a :href="link.href" @click="closeMenu">{{ link.label }}</a>
+            <a :href="link.href" @click="handleNavClick(link, $event)">{{ link.label }}</a>
           </li>
           <li>
-            <a href="#contact" @click="closeMenu">Contact</a>
+            <a href="/#contact" @click="closeMenu">Contact</a>
           </li>
         </ul>
       </nav>
@@ -41,10 +41,10 @@
     >
       <ul>
         <li v-for="link in site.navLinks" :key="link.href">
-          <a :href="link.href" @click="closeMenu">{{ link.label }}</a>
+          <a :href="link.href" @click="handleNavClick(link, $event)">{{ link.label }}</a>
         </li>
         <li>
-          <a href="#contact" class="btn btn--primary" @click="closeMenu">Contact</a>
+          <a href="/#contact" class="btn btn--primary" @click="closeMenu">Contact</a>
         </li>
       </ul>
     </div>
@@ -56,6 +56,7 @@ import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { Icon } from '@iconify/vue';
 import site from '../../data/site.js';
 import { useScrolled } from '../../composables/useScrolled.js';
+import { navigate } from '../../composables/useRouter.js';
 
 const scrolled = useScrolled(24);
 const menuOpen = ref(false);
@@ -68,6 +69,22 @@ function closeMenu() {
 }
 function onKey(e) {
   if (e.key === 'Escape') closeMenu();
+}
+
+// Navigate to home via SPA (no full reload)
+function handleBrandClick(e) {
+  e.preventDefault();
+  closeMenu();
+  navigate('/');
+}
+
+// SPA navigation for page routes (e.g. /about); normal anchor scroll for #hash links
+function handleNavClick(link, e) {
+  if (!link.href.startsWith('/#') && link.href.startsWith('/')) {
+    e.preventDefault();
+    navigate(link.href);
+  }
+  closeMenu();
 }
 
 onMounted(() => window.addEventListener('keydown', onKey));

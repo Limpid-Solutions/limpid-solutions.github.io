@@ -10,10 +10,10 @@ export default {
   email: 'info@limpidsolutions.com.au',
   location: 'Australia',
   navLinks: [
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Industries', href: '#industries' },
-    { label: 'Stack', href: '#tech' },
-    { label: 'Customers', href: '#customers' },
+    { label: 'About', href: '/about' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Industries', href: '/#industries' },
+    { label: 'Stack', href: '/#tech' },
+    { label: 'Customers', href: '/#customers' },
   ],
 };

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Limpid Solutions</title>
+    <script>
+      // GitHub Pages SPA redirect: encode the requested path as a query string
+      // so index.html can restore it via history.replaceState.
+      var path = window.location.pathname.slice(1);
+      if (path) {
+        window.location.replace(
+          window.location.origin + '/?p=' + encodeURIComponent(path) + window.location.hash
+        );
+      } else {
+        window.location.replace(window.location.origin + '/');
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

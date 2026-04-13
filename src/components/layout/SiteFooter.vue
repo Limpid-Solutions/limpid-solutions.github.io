@@ -2,8 +2,8 @@
   <footer class="site-footer">
     <div class="container site-footer__inner">
       <div class="site-footer__brand">
-        <a href="#top" class="site-footer__logo">
-          <img src="/logos/limpidsolutions.png" alt="" class="site-footer__logo-img" aria-hidden="true" />
+        <a href="/" class="site-footer__logo">
+          <img src="/logos/limpidsolutions.svg" alt="" class="site-footer__logo-img" aria-hidden="true" />
           {{ site.shortName }}
         </a>
         <p>{{ site.tagline }}</p>
@@ -15,7 +15,7 @@
           <li v-for="link in site.navLinks" :key="link.href">
             <a :href="link.href">{{ link.label }}</a>
           </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/#contact">Contact</a></li>
         </ul>
       </nav>
 
@@ -75,8 +75,6 @@ const year = new Date().getFullYear();
   height: 28px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
 }
 
 .site-footer h4 {
